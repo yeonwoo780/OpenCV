@@ -4,7 +4,7 @@ import cv2
 
 # 컬러 영상 출력
 imgBGR = cv2.imread('ch01/cat.bmp')
-imgRGB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2RGB)
+imgRGB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2RGB) # plt 처리위한 RGB처리
 
 plt.axis('off')
 plt.imshow(imgRGB)
