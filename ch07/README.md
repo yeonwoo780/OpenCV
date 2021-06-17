@@ -227,3 +227,87 @@ Otsu는 Recursion을 이용해 효율적으로 계산하여 연산속도를 높�
 3. 범용 모폴로지 연산 함수
 
    cv2.morphologyEx(src, op, kernel, dst=None, anchor=None, iterations=None,  borderType=None, borderValue=None)
+
+
+
+#### 레이블링
+
+-  객체 단위분석
+
+  객체를 분할하여 특징을 분석하는 것을 의미
+
+  영상이 입력되었을 때 객체와 배경이 분리될 수 있다고 가정하며 이진화를 통해 객체와 배경을 분리
+
+  각각의 객체의 모양과 크기를 분석해서 내가 원하는 객체가 어디에 이쓰지 확인하고 싶을 때 객체단위 분석이 필요
+
+  객체 위치 및 크기 정보, ROI 추출, 모양 분석 등을 할 수 있다.
+
+  <br>
+
+  
+
+- **레이블링**
+
+  객체 구역을 영역 단위로 분석하는 것
+
+  서로 연결되어 있는 객체 픽셀에 고유한 번호를 지정하는 작업 (레이블맵)
+
+  이진 영상에서 수행
+
+  레이블링 속도가 외곽선 검출보다 빨라서 더 효율적
+
+  <br>
+
+  
+
+- 외곽선 검출
+
+  각 객체의 외곽선 좌표를 모두 검출
+
+  외곽선 기반 모양 분석
+
+  다양한 외곽선 처리 함수에서 활용 가능 (근사화, 컨벡스헐 등)
+
+  <br>
+
+
+
+- 픽셀의 연결관계
+
+  - **4-이웃 연결 관계(4-neighbor connectivity)**
+
+    4-이웃 연결 관계는 어떤 객체가 연결되어 있을 때 두 개 픽셀이 상하좌우 관계로 연결되었을 때를 의미
+
+    <br>
+
+    
+
+  - **8-이웃 연결 관계(8-neighbor connectivity)**
+
+    8-이웃 연결 관계는 상하좌우에 대각선도 포함하여 연결되어 있을 때를 의미
+
+    OpenCV는 보통 8-이웃 연결 관계를 사용
+
+    <br>
+
+- 레이블링 알고리즘의 입력과 출력
+
+   0은 배경 1이상은 객체로 판단
+
+  객체들이 서로 연결되어 있으면 같은 번호를 지정
+
+  같은 객체에 번호가 지정된 것을 레이블 맵
+
+  
+
+- 레이블링 함수
+
+  cv2.connectedComponents(image, labels=None, connectivity=None, ltype=None)
+
+  None값들은 default
+
+  
+
+- 객체 정보를 함께 반환하는 레이블링 함수
+
+  cv2.connectedComponentsWithStats(image, labels=None, stats=None, centroids=None, connectivity=None, ltype=None)
