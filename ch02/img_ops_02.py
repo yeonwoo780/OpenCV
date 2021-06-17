@@ -7,7 +7,7 @@ img1 = cv2.imread('ch02/HappyFish.jpg')
 img2 = img1
 img3 = img1.copy()
 
-#img1.fill(255)
+img1.fill(255)
 
 cv2.imshow('img1', img1)
 cv2.imshow('img2', img2)
