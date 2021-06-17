@@ -26,3 +26,10 @@
 
 [7. 이진 영상처리](https://github.com/yeonwoo780/OpenCV/tree/main/ch07)
 
+
+
+[8. 영상 분할과 객체 검출](https://github.com/yeonwoo780/OpenCV/tree/main/ch08)
+
+
+
+[9. 특징점 검출과매칭](https://github.com/yeonwoo780/OpenCV/tree/main/ch09)
