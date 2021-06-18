@@ -18,9 +18,9 @@ def drawBox(img, classId, conf, left, top, right, bottom):
 
 
 # 모델 & 설정 파일
-model = 'mask_rcnn/frozen_inference_graph.pb'
-config = 'mask_rcnn/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt'
-class_labels = 'mask_rcnn/coco.names'
+model = 'ch13/mask_rcnn/frozen_inference_graph.pb'
+config = 'ch13/mask_rcnn/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt'
+class_labels = 'ch13/mask_rcnn/coco.names'
 confThreshold = 0.6
 maskThreshold = 0.3
 
