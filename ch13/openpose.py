@@ -44,14 +44,14 @@ for f in img_files:
     for i in range(nparts):
         heatMap = out[0, i, :, :]
 
-        """
+        # 관절포인트 확인     
         heatImg = cv2.normalize(heatMap, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
         heatImg = cv2.resize(heatImg, (w, h))
         heatImg = cv2.cvtColor(heatImg, cv2.COLOR_GRAY2BGR)
         heatImg = cv2.addWeighted(img, 0.5, heatImg, 0.5, 0)
         cv2.imshow('heatImg', heatImg)
         cv2.waitKey()
-        """ 
+        
 
         _, conf, _, point = cv2.minMaxLoc(heatMap)
         x = int(w * point[0] / out.shape[3])
