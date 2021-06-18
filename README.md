@@ -33,3 +33,11 @@
 
 
 [9. 특징점 검출과매칭](https://github.com/yeonwoo780/OpenCV/tree/main/ch09)
+
+
+
+[10. 객체 추적과 모션 벡터](https://github.com/yeonwoo780/OpenCV/tree/main/ch10)
+
+
+
+[11. 머신 러닝](https://github.com/yeonwoo780/OpenCV/tree/main/ch11)
