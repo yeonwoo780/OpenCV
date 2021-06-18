@@ -4,8 +4,8 @@ import cv2
 
 
 # 모델 & 설정 파일
-model = 'openpose/pose_iter_440000.caffemodel'
-config = 'openpose/pose_deploy_linevec.prototxt'
+model = 'ch13/openpose/pose_iter_440000.caffemodel'
+config = 'ch13/openpose/pose_deploy_linevec.prototxt'
 
 # 포즈 점 개수, 점 연결 개수, 연결 점 번호 쌍
 nparts = 18
@@ -17,7 +17,7 @@ pose_pairs = [(1, 2), (2, 3), (3, 4),  # 왼팔
               (1, 0), (0, 14), (14, 16), (0, 15), (15, 17)]  # 얼굴
 
 # 테스트 이미지 파일
-img_files = ['pose1.jpg', 'pose2.jpg', 'pose3.jpg']
+img_files = ['ch13/pose1.jpg', 'ch13/pose2.jpg', 'ch13/pose3.jpg']
 
 # 네트워크 생성
 net = cv2.dnn.readNet(model, config)
