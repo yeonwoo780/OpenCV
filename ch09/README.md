@@ -320,3 +320,60 @@ But! 평탄한 영역(flat)과 에지(edge) 영역은 고유한 위치를 찾기
 
   cv2.drawMatches(img1, keypoints1, img2, keypoints2, matches1to2, outImg,  matchColor=None, singlePointColor=None, matchesMask=None,  flags=None)
 
+
+
+#### 좋은 매칭선별
+
+1. **distance 값을 기준으로 정렬 후 상위 N개 선택하기**
+
+    가장 좋은 매칭 결과에서 distance 값이 작은 것 N개를 사용하는 방법입니다.
+
+    유사도가 높은 것이 좋은 매칭을 의미하는데 유사도가 높다는 것은 두 개의 **특징벡터의 distance 값이 작은 것**
+
+   **cv2.DMatch.distance 값을 기준으로 내림차순 정렬 후 상위 N개를 선택**
+
+   <br>
+
+   
+
+2. **가장 좋은 값과 두 번째로 좋은 값의 비율을 계산하기**
+
+   가장 좋은 매칭 결과의 distance 값과 두 번째로 좋은 매칭 결과의 **distance 값의 비율**을 계산하는 방법
+
+   비율의 임계값을 설정하여 **임계값보다 작으면 선택**함으로써 좋은 매칭 결과를 선별
+
+   <br>
+
+   
+
+ORB 방법이 성능이 제일 떨어지지만 제일 빠릅니다.
+
+AKAZE가 성능이 제일 좋습니다.
+
+<br>
+
+
+
+#### 이미지 스티칭(Image Stitching)
+
+이미지 스티칭은 동일 장면의 사진을 자연스럽게(seamless) 붙여서 **한 장의 사진**으로 만드는 기술
+
+여러장의 영상에서 특징점을 검출하고 **특징점이 동일한 것**들을 찾아서 두 장의 영상과의 **투시변환 관계**를 찾아내어 이어 붙임
+
+
+
+- 이미지 스티칭 객체 생성
+
+  cv2.Stitcher_create(, mode=None)
+
+  <br>
+
+  
+
+- 이미지 스티칭함수
+
+  cv2.Stitcher.stitch(images, pano=None)
+
+  <br>
+
+  

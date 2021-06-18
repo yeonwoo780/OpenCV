@@ -4,8 +4,8 @@ import cv2
 
 
 # 영상 불러오기
-src1 = cv2.imread('graf1.png', cv2.IMREAD_GRAYSCALE)
-src2 = cv2.imread('graf3.png', cv2.IMREAD_GRAYSCALE)
+src1 = cv2.imread('ch09/graf1.png', cv2.IMREAD_GRAYSCALE)
+src2 = cv2.imread('ch09/graf3.png', cv2.IMREAD_GRAYSCALE)
 
 if src1 is None or src2 is None:
     print('Image load failed!')
@@ -27,8 +27,8 @@ matches = matcher.knnMatch(desc1, desc2, 2)
 
 # 좋은 매칭 결과 선별
 good_matches = []
-for m in matches:
-    if m[0].distance / m[1].distance < 0.7:
+for m in matches: # matches는 두개의 리스트로 구성
+    if m[0].distance / m[1].distance < 0.5: # 임계값
         good_matches.append(m[0])
 
 print('# of kp1:', len(kp1))
